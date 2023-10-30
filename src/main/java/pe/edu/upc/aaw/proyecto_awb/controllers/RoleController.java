@@ -2,7 +2,6 @@ package pe.edu.upc.aaw.proyecto_awb.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +30,6 @@ public class RoleController {
         irS.insertar(b);
     }
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public List<RoleDTO> list() {
         return irS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -40,13 +38,11 @@ public class RoleController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void delete(@PathVariable("id")Long id){
         irS.delete(id);
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public RoleDTO listId(@PathVariable("id")Long id){
         ModelMapper m=new ModelMapper();
         RoleDTO dto=m.map(irS.listId(id),RoleDTO.class);
@@ -54,7 +50,6 @@ public class RoleController {
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void goUpdate(@RequestBody RoleDTO dto){
         ModelMapper m=new ModelMapper();
         Roles a=m.map(dto,Roles.class);

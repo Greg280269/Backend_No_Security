@@ -2,7 +2,7 @@ package pe.edu.upc.aaw.proyecto_awb.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.proyecto_awb.dtos.DetalleDTO;
 import pe.edu.upc.aaw.proyecto_awb.entities.Detalle;
@@ -17,7 +17,6 @@ public class DetalleController {
     @Autowired
     private IDetalleService ids;
     @PostMapping
-    @PreAuthorize("hasAuthority('PROPIETARIO') or hasAuthority('ASISTENTE') or hasAuthority('ORGANIZADOR')")
     public void registrar(@RequestBody DetalleDTO dto){
         ModelMapper m= new ModelMapper();
         Detalle o = m.map(dto,Detalle.class);
@@ -25,7 +24,6 @@ public class DetalleController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('PROPIETARIO') or hasAuthority('ASISTENTE') or hasAuthority('ORGANIZADOR')")
     public List<DetalleDTO> listar(){
         return ids.list().stream().map(x->{
             ModelMapper M=new ModelMapper();
@@ -34,11 +32,9 @@ public class DetalleController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('PROPIETARIO') or hasAuthority('ASISTENTE') or hasAuthority('ORGANIZADOR')")
     public void eliminar(@PathVariable("id")Integer id){ids.delete(id);}
 
     @PutMapping
-    @PreAuthorize("hasAuthority('PROPIETARIO') or hasAuthority('ASISTENTE') or hasAuthority('ORGANIZADOR')")
     public void modificar(@RequestBody DetalleDTO dto)
     {
         ModelMapper m= new ModelMapper();
@@ -47,7 +43,6 @@ public class DetalleController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('PROPIETARIO') or hasAuthority('ASISTENTE') or hasAuthority('ORGANIZADOR')")
     public DetalleDTO listId(@PathVariable("id")Integer id){
         ModelMapper m=new ModelMapper();
         DetalleDTO dto=m.map(ids.listID(id),DetalleDTO.class);
