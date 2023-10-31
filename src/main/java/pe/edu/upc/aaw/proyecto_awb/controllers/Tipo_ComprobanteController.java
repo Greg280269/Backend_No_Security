@@ -20,7 +20,7 @@ public class Tipo_ComprobanteController {
     public void registrar(@RequestBody TipoComprobanteDTO dto){
         ModelMapper m= new ModelMapper();
         TipoComprobante o = m.map(dto,TipoComprobante.class);
-        tdS.insertar(o);
+        tdS.insert(o);
     }
 
     @GetMapping
@@ -38,7 +38,7 @@ public class Tipo_ComprobanteController {
     public void modificar(@RequestBody TipoComprobanteDTO dto) {
         ModelMapper m= new ModelMapper();
         TipoComprobante o = m.map(dto,TipoComprobante.class);
-        tdS.insertar(o);
+        tdS.insert(o);
     }
 
     @GetMapping("/{id}")

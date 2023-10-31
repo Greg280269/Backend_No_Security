@@ -13,7 +13,7 @@ public class TipoComprobanteServiceImplement implements ITipoComprobanteService 
     private ITipoComprobanteRepository tcR;
 
     @Override
-    public void insertar(TipoComprobante s) {
+    public void insert(TipoComprobante s) {
         tcR.save(s);
     }
 
