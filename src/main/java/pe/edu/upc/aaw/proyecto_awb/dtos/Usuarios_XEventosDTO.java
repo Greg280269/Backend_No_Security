@@ -7,7 +7,7 @@ public class Usuarios_XEventosDTO {
     private int idUsuXEve;
     private Eventos eventos;
     private Users users;
-    private String descripcion;
+
 
     public int getIdUsuXEve() {
         return idUsuXEve;
@@ -33,11 +33,5 @@ public class Usuarios_XEventosDTO {
         this.users = users;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }

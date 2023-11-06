@@ -18,18 +18,18 @@ public class Servicios {
     @Column(name = "costo",nullable = false,scale = 2)
     private double costo;
 
-    @Column(name ="Estado", length = 50, nullable = false )
-    private String Estado;
+    @Column(name ="estado", length = 50, nullable = false )
+    private boolean estado;
 
     public Servicios() {
     }
 
-    public Servicios(int idSerDisp, String nombre, String descripcion, double costo, String estado) {
+    public Servicios(int idSerDisp, String nombre, String descripcion, double costo, boolean estado) {
         this.idSerDisp = idSerDisp;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.costo = costo;
-        Estado = estado;
+        this.estado = estado;
 
     }
 
@@ -65,11 +65,11 @@ public class Servicios {
         this.costo = costo;
     }
 
-    public String getEstado() {
-        return Estado;
+    public boolean getEstado() {
+        return estado;
     }
 
-    public void setEstado(String estado) {
-        Estado = estado;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 }

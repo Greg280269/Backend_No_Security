@@ -7,7 +7,7 @@ public class Servicios_XLocalesDTO {
     private int idSErxL;
     private Locales locales;
     private Servicios servicios;
-    private String Descripcion;
+
 
     public int getIdSErxL() {
         return idSErxL;
@@ -33,11 +33,5 @@ public class Servicios_XLocalesDTO {
         this.servicios = servicios;
     }
 
-    public String getDescripcion() {
-        return Descripcion;
-    }
 
-    public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
-    }
 }

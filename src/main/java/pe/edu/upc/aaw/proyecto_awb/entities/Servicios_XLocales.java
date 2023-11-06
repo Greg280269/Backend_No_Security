@@ -17,17 +17,16 @@ public class Servicios_XLocales {
     @JoinColumn(name = "servicios_id")
     private Servicios servicios;
 
-    @Column(name = "Descripcion", length = 250, nullable = false)
-    private String Descripcion;
+
 
     public Servicios_XLocales() {
     }
 
-    public Servicios_XLocales(int idSerxL, Locales locales, Servicios servicios, String descripcion) {
+    public Servicios_XLocales(int idSerxL, Locales locales, Servicios servicios) {
         this.idSerxL = idSerxL;
         this.locales = locales;
         this.servicios = servicios;
-        Descripcion = descripcion;
+
     }
 
     public int getIdSerxL() {
@@ -54,11 +53,5 @@ public class Servicios_XLocales {
         this.servicios = servicios;
     }
 
-    public String getDescripcion() {
-        return Descripcion;
-    }
 
-    public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
-    }
 }

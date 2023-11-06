@@ -17,18 +17,17 @@ public class Usuarios_XEventos {
     @JoinColumn(name = "id_Usuario")
     private Users users;
 
-    @Column(name = "descripcion", length = 250)
-    private String descripcion;
+
 
 
     public Usuarios_XEventos() {
     }
 
-    public Usuarios_XEventos(int idUsuXEve, Eventos eventos, Users users, String descripcion) {
+    public Usuarios_XEventos(int idUsuXEve, Eventos eventos, Users users) {
         this.idUsuXEve = idUsuXEve;
         this.eventos = eventos;
         this.users = users;
-        this.descripcion = descripcion;
+
     }
 
     public int getIdUsuXEve() {
@@ -55,13 +54,7 @@ public class Usuarios_XEventos {
         this.users = users;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
+ 
 }
 
 

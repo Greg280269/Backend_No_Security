@@ -5,7 +5,7 @@ public class ServiciosDTO {
     private String nombre;
     private String descripcion;
     private double costo;
-    private String Estado;
+    private boolean estado;;
 
     public int getIdSerDisp() {
         return idSerDisp;
@@ -39,11 +39,11 @@ public class ServiciosDTO {
         this.costo = costo;
     }
 
-    public String getEstado() {
-        return Estado;
+    public boolean isEstado() {
+        return estado;
     }
 
-    public void setEstado(String estado) {
-        Estado = estado;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 }
