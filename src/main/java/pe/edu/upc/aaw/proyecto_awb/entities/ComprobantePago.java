@@ -24,9 +24,6 @@ public class ComprobantePago {
     @Column(name ="RUC", length = 10, nullable = false )
     private String RUC;
 
-    @ManyToOne
-    @JoinColumn(name = "detalle_id")
-    private Detalle detalle;
 
     @ManyToOne
     @JoinColumn(name = "Tipo_Comprobante_id")
@@ -35,20 +32,25 @@ public class ComprobantePago {
     @Column(name = "IGV")
     private int IGV;
 
+    @ManyToOne
+    @JoinColumn(name = "eventos_id")
+    private Eventos eventos;
+
 
 
     public ComprobantePago() {
     }
 
-    public ComprobantePago(int id, double monto, LocalDate fecha, String metodo, String RUC, Detalle detalle, TipoComprobante tipoComprobante, int IGV) {
+
+    public ComprobantePago(int id, double monto, LocalDate fecha, String metodo, String RUC, TipoComprobante tipoComprobante, int IGV, Eventos eventos) {
         this.id = id;
         this.monto = monto;
         this.fecha = fecha;
         this.metodo = metodo;
         this.RUC = RUC;
-        this.detalle = detalle;
         this.tipoComprobante = tipoComprobante;
         this.IGV = IGV;
+        this.eventos = eventos;
     }
 
     public int getId() {
@@ -59,7 +61,13 @@ public class ComprobantePago {
         this.id = id;
     }
 
+    public double getMonto() {
+        return monto;
+    }
 
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }
 
     public LocalDate getFecha() {
         return fecha;
@@ -85,14 +93,6 @@ public class ComprobantePago {
         this.RUC = RUC;
     }
 
-    public Detalle getDetalle() {
-        return detalle;
-    }
-
-    public void setDetalle(Detalle detalle) {
-        this.detalle = detalle;
-    }
-
     public TipoComprobante getTipoComprobante() {
         return tipoComprobante;
     }
@@ -105,15 +105,15 @@ public class ComprobantePago {
         return IGV;
     }
 
-    public double getMonto() {
-        return monto;
-    }
-
-    public void setMonto(double monto) {
-        this.monto = monto;
-    }
-
     public void setIGV(int IGV) {
         this.IGV = IGV;
+    }
+
+    public Eventos getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(Eventos eventos) {
+        this.eventos = eventos;
     }
 }

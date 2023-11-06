@@ -1,9 +1,8 @@
 package pe.edu.upc.aaw.proyecto_awb.dtos;
 
-import pe.edu.upc.aaw.proyecto_awb.entities.Detalle;
+import pe.edu.upc.aaw.proyecto_awb.entities.Eventos;
 import pe.edu.upc.aaw.proyecto_awb.entities.TipoComprobante;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class ComprobantePagoDTO {
@@ -18,7 +17,7 @@ public class ComprobantePagoDTO {
 
     private String RUC;
 
-    private Detalle detalle;
+    private Eventos eventos;
 
     private TipoComprobante tipoComprobante;
 
@@ -57,14 +56,7 @@ public class ComprobantePagoDTO {
     public void setRUC(String RUC) {
         this.RUC = RUC;
     }
-    
-    public Detalle getDetalle() {
-        return detalle;
-    }
 
-    public void setDetalle(Detalle detalle) {
-        this.detalle = detalle;
-    }
 
     public TipoComprobante getTipoComprobante() {
         return tipoComprobante;
@@ -88,5 +80,13 @@ public class ComprobantePagoDTO {
 
     public void setMonto(double monto) {
         this.monto = monto;
+    }
+
+    public Eventos getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(Eventos eventos) {
+        this.eventos = eventos;
     }
 }
