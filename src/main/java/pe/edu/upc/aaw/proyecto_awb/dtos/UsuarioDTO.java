@@ -12,7 +12,7 @@ public class UsuarioDTO {
     private String email;
     private long telefono;
 
-    private Boolean enabled;
+    private boolean enabled;
 
     private String password;
 
