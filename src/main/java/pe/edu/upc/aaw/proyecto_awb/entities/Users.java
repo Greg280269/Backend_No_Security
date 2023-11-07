@@ -25,6 +25,7 @@ public class Users implements Serializable {
     @Column(name = "Telefono", length = 9, nullable = false)
     private long telefono;
 
+    @Column(name="enabled",nullable=false)
     private boolean enabled;
 
 
@@ -101,7 +102,7 @@ public class Users implements Serializable {
         this.telefono = telefono;
     }
 
-    public boolean getEnabled() {
+    public boolean isEnabled() {
         return enabled;
     }
 

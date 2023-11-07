@@ -82,7 +82,7 @@ public class UsuarioDTO {
         this.telefono = telefono;
     }
 
-    public boolean getEnabled() {
+    public boolean isEnabled() {
         return enabled;
     }
 
