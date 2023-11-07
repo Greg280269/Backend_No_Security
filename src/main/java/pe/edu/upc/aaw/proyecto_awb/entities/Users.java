@@ -36,7 +36,7 @@ public class Users implements Serializable {
     @JoinColumn(name = "user_id")
     private List<Roles> roles;
 
-    public Users(int idUser, long dni, String username, String apellido, String email, long telefono, Boolean enabled, String password, List<Roles> roles) {
+    public Users(int idUser, long dni, String username, String apellido, String email, long telefono, boolean enabled, String password, List<Roles> roles) {
         this.idUser = idUser;
         this.dni = dni;
         this.username = username;
@@ -101,11 +101,11 @@ public class Users implements Serializable {
         this.telefono = telefono;
     }
 
-    public Boolean getEnabled() {
+    public boolean getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(Boolean enabled) {
+    public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
 
