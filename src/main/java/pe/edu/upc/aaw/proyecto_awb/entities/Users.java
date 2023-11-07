@@ -25,7 +25,7 @@ public class Users implements Serializable {
     @Column(name = "Telefono", length = 9, nullable = false)
     private long telefono;
 
-    private Boolean enabled;
+    private boolean enabled;
 
 
     @Column(length = 200)
